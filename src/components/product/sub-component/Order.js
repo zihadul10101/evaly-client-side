@@ -10,7 +10,7 @@ const Order = () => {
     const customerEmail = useSelector((state) => state.auth.authdetails)
     // console.log(singleProductDetail);
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const onSubmit = async (data) => {
         const orderData = {
             customerEmail: data.CustomerEmail,

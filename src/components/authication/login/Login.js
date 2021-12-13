@@ -16,7 +16,7 @@ const Login = () => {
 	const dispatch = useDispatch();
 
 	const [error, setError] = useState(false);
-	const { register, handleSubmit, watch, formState: { errors } } = useForm();
+	const { register, handleSubmit } = useForm();
 	const onSubmit = async (data) => {
 		console.log(data.Email);
 		const userData = {

@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 const AddProducts = () => {
 
   
   const [photo,setPhoto] =useState('');
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const onSubmit = async (data) => {
 		const productData = {
 			title: data.Title,

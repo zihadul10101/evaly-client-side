@@ -5,7 +5,7 @@ import './SignUp.css';
 import { useHistory } from 'react-router-dom';
 const SignUp = () => {
   const history = useHistory();
-  const { register,reset, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
 		const userData = {
 			email: data.email,
