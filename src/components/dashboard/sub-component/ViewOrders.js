@@ -41,7 +41,7 @@ const ViewOrders = () => {
                     {
                         allOrders.map(order => (
                             <tr>
-                                <td><img style={{ height: '50%', width: '50%' }} src={order.productImage} /></td>
+                                <td><img style={{ height: '50%', width: '50%' }} alt='productImage' src={order.productImage} /></td>
                                 <td>{order.productName}</td>
                                 <td>{order.customerEmail}</td>
                                 <td>{order.price}</td>

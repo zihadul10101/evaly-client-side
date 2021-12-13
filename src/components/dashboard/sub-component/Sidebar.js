@@ -19,23 +19,23 @@ const Sidebar = () => {
            findAdmin && <>
            
            <li className="active">
-            <Link to="/dashboard/addproduct"><i className="fa fa-home"></i>Add Product</Link>
+            <Link to="/dashboard/addproduct">Add Product</Link>
           </li>
           <li>
-            <Link to="/dashboard/addaccount"><i className="fa fa-plug"></i>Add Admin</Link>
+            <Link to="/dashboard/addaccount">Add Admin</Link>
           </li>
           <li>
-            <Link to="/dashboard/vieworder"><i className="fa fa-user"></i>View Orders</Link>
+            <Link to="/dashboard/vieworder">View Orders</Link>
           </li>
            
            </>
          }
           <li>
-            <Link to="/dashboard/customerprofile"><i className="fa fa-user"></i>Customer Profile</Link>
+            <Link to="/dashboard/customerprofile">Customer Profile</Link>
           </li>
 
           <li>
-            <Link to="/dashboard/orderlist"><i className="fa fa-user"></i>Order List</Link>
+            <Link to="/dashboard/orderlist">Order List</Link>
           </li>
 
         </ul>
@@ -47,12 +47,3 @@ const Sidebar = () => {
 export default Sidebar;
 
 
-{/* <div id="navbar-wrapper">
-<nav className="navbar navbar-inverse">
-  <div className="container-fluid">
-    <div className="navbar-header">
-      <a href="#" className="navbar-brand" id="sidebar-toggle"><i className="fa fa-bars"></i></a>
-    </div>
-  </div>
-</nav>
-</div> */}
