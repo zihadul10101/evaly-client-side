@@ -38,7 +38,7 @@ const Login = () => {
 		try {
 			const res = await axios({
 				method: 'post',
-				url: 'http://localhost:5500/api/auth/login',
+				url: 'https://quiet-lowlands-25512.herokuapp.com/api/auth/login',
 				data: userData
 			});
 			dispatch(customAuthAction(res.data.others));

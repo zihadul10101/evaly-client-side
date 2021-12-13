@@ -28,7 +28,7 @@ const AddAccount = () => {
         try {
 			const res = await axios({
 			  method: 'post',
-			  url: 'http://localhost:5500/api/auth/register',
+			  url: 'https://quiet-lowlands-25512.herokuapp.com/api/auth/register',
 			  data: newAdminData
 			});
 		

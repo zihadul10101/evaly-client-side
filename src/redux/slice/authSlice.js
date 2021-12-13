@@ -17,6 +17,10 @@ export const authSlice = createSlice({
         },
       addtocart: (state, action) => {
           state.cartItem = action.payload
-      }
+      },
+      logOut: (state, action) => {
+        state.authdetails = {}
+
+    },
     },
 })

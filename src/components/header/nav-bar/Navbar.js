@@ -1,7 +1,12 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { logOutAction } from '../../../redux/action/action';
 
 const Navbar = () => {
+    const dispatch = useDispatch();
+    const email = useSelector((state) => state.auth.authdetails.email)
+
     return (
         <div  className="mt-5">
              <nav className="navbar navbar-expand-lg navbar-light  fixed-top " style={{backgroundColor:'#00FFFF'}}>
@@ -37,6 +42,17 @@ const Navbar = () => {
                             <Link className="nav-link" to="/login">Login</Link>
                          
                         </li>
+
+                        {
+                          email && <>
+                          
+                          <li className="nav-item">
+                            <Link onClick={() => dispatch(logOutAction())} to="/" className="nav-link" >LogOut</Link>
+                         
+                        </li>
+                          
+                          </>  
+                        }
                     </ul>
 
                 </div>

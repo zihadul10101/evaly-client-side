@@ -13,7 +13,7 @@ const ProductContainer = () => {
 
     const getProduct = async () => {
         try {
-            const res = await axios.get('http://localhost:5500/api/product/productAll');
+            const res = await axios.get('https://quiet-lowlands-25512.herokuapp.com/api/product/productAll');
 
             setProduct(res.data)
 

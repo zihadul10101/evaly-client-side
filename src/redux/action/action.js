@@ -11,3 +11,7 @@ const { actions: slice } = authSlice;
     export const addToCart = (cartItem) => (dispatch) => {
         dispatch(slice.addtocart(cartItem))
     }
+
+    export const logOutAction = () => (dispatch) => {
+        dispatch(slice.logOut())
+    }

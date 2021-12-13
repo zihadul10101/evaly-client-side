@@ -1,8 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
 
+  const findAdmin = useSelector((state) => state.auth.authdetails.role === 'Admin');
 
 
 
@@ -13,15 +15,21 @@ const Sidebar = () => {
           <h2>Dashboard</h2>
         </div>
         <ul className="sidebar-nav">
-          <li className="active">
+         {
+           findAdmin && <>
+           
+           <li className="active">
             <Link to="/dashboard/addproduct"><i className="fa fa-home"></i>Add Product</Link>
           </li>
           <li>
-            <Link to="/dashboard/addaccount"><i className="fa fa-plug"></i>Add Acount</Link>
+            <Link to="/dashboard/addaccount"><i className="fa fa-plug"></i>Add Admin</Link>
           </li>
           <li>
             <Link to="/dashboard/vieworder"><i className="fa fa-user"></i>View Orders</Link>
           </li>
+           
+           </>
+         }
           <li>
             <Link to="/dashboard/customerprofile"><i className="fa fa-user"></i>Customer Profile</Link>
           </li>

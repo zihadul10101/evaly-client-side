@@ -19,7 +19,7 @@ const AddProducts = () => {
         try {
 			const res = await axios({
 			  method: 'post',
-			  url: 'http://localhost:5500/api/product/addnewproduct',
+			  url: 'https://quiet-lowlands-25512.herokuapp.com/api/product/addnewproduct',
 			  data: productData
 			});
 		

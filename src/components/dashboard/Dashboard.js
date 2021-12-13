@@ -10,38 +10,51 @@ import ViewOrders from './sub-component/ViewOrders'
 import './dashboard.css';
 import Sidebar from './sub-component/Sidebar';
 import CustomerProfile from './sub-component/CustomerProfile';
+import { useSelector } from 'react-redux';
 
 const Dashboard = () => {
+
+  const findAdmin = useSelector((state) => state.auth.authdetails.role === 'Admin');
+  console.log();
+
   return (
-    
-      <div id="wrapper">
-        <Router>
+
+    <div id="wrapper">
+      <Router>
         <Sidebar />
-          <Switch>
+        <Switch>
 
-            <Route exact path="/dashboard/addproduct">
-              <AddProducts />
+          {
+            findAdmin && <>
 
-            </Route>
-            <Route exact path="/dashboard/addaccount">
-              <AddAccount />
-            </Route>
+              <Route exact path="/dashboard/addproduct">
+                <AddProducts />
 
-            <Route exact path="/dashboard/vieworder">
-              <ViewOrders />
-            </Route>
+              </Route>
+              <Route exact path="/dashboard/addaccount">
+                <AddAccount />
+              </Route>
 
-            <Route exact path="/dashboard/customerprofile">
-              <CustomerProfile />
-            </Route>
-           
-          </Switch>
-        </Router>
+              <Route exact path="/dashboard/vieworder">
+                <ViewOrders />
+              </Route>
 
 
-      </div>
 
-  
+
+            </>
+          }
+
+          <Route exact path="/dashboard/customerprofile">
+            <CustomerProfile />
+          </Route>
+        </Switch>
+      </Router>
+
+
+    </div>
+
+
   );
 };
 

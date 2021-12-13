@@ -20,7 +20,7 @@ const Order = () => {
         try {
             const res = await axios({
                 method: 'post',
-                url: 'http://localhost:5500/api/order/addneworder',
+                url: 'https://quiet-lowlands-25512.herokuapp.com/api/order/addneworder',
                 data: orderData
             });
             console.log(data);

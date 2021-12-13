@@ -41,10 +41,10 @@ const Routes = () => {
                     <ProductDetail />
                 </Route>
 
-                <Route exact path="/products/order">
+                <PrivateRoute exact path="/products/order">
                  <Order />
 
-                </Route>
+                </PrivateRoute>
 
                 <Route exact path="/Signin">
                     <SignIn />

@@ -11,7 +11,7 @@ const ProductDetail = () => {
     const [singleProduct, setSingleProduct] = useState([]);
     // console.log(singleProduct);
     useEffect(() => {
-        fetch('http://localhost:5500/api/product/productAll')
+        fetch('https://quiet-lowlands-25512.herokuapp.com/api/product/productAll')
             .then(res => res.json())
             .then(data => setSingleProduct(data))
     }, [])
