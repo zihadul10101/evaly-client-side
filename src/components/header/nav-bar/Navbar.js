@@ -5,7 +5,7 @@ import { logOutAction } from '../../../redux/action/action';
 
 const Navbar = () => {
     const dispatch = useDispatch();
-    const email = useSelector((state) => state.auth.authdetails.email)
+    const email = useSelector((state) => state?.auth?.authdetails?.email)
 
     return (
         <div  className="mt-5">
