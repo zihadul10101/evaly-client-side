@@ -1,9 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import {useHistory } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 
 const Order = () => {
+    const history = useHistory();
     const singleProductDetail = useSelector((state) => state.auth.cartItem);
     const customerEmail = useSelector((state) => state.auth.authdetails)
     // console.log(singleProductDetail);
@@ -29,6 +31,8 @@ const Order = () => {
         catch (err) {
             console.log(err);
         }
+
+        history.replace('/dashboard')
 
     }
 

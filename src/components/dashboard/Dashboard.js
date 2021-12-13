@@ -11,6 +11,7 @@ import './dashboard.css';
 import Sidebar from './sub-component/Sidebar';
 import CustomerProfile from './sub-component/CustomerProfile';
 import { useSelector } from 'react-redux';
+import UserOrderList from './sub-component/UserOrderList';
 
 const Dashboard = () => {
 
@@ -39,15 +40,15 @@ const Dashboard = () => {
                 <ViewOrders />
               </Route>
 
-
-
-
             </>
           }
 
           <Route exact path="/dashboard/customerprofile">
             <CustomerProfile />
           </Route>
+          <Route exact path="/dashboard/orderlist">
+            <UserOrderList />
+              </Route>
         </Switch>
       </Router>
 

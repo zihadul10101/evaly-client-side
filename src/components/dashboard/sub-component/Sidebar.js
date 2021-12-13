@@ -34,6 +34,10 @@ const Sidebar = () => {
             <Link to="/dashboard/customerprofile"><i className="fa fa-user"></i>Customer Profile</Link>
           </li>
 
+          <li>
+            <Link to="/dashboard/orderlist"><i className="fa fa-user"></i>Order List</Link>
+          </li>
+
         </ul>
       </aside>
     </div>
