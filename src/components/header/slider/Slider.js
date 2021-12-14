@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import evaly1 from '../../../../../fronted/src/assets/evaly-2.png';
+import evaly2 from '../../../../../fronted/src/assets/evaly-4.png';
+import evaly3 from '../../../../../fronted/src/assets/evaly-7.png';
 const Slider = () => {
     return (
         <div id="carouselExampleIndicators" className="carousel slide panda-slide" data-bs-ride="carousel">
@@ -24,7 +27,7 @@ const Slider = () => {
                         </Link>
                     </div>
                     <div className="col-md-5">
-                        <img src="http://zwin.io/react/stoon/assets/img/shop/5.png" className="d-block w-100" alt="..."/>
+                        <img src={evaly1} className="d-block w-100" alt="..."/>
                     </div>
                 </div>
             </div>
@@ -41,7 +44,7 @@ const Slider = () => {
                         </Link>
                     </div>
                     <div className="col-md-5">
-                        <img src="http://zwin.io/react/stoon/assets/img/shop/1.png" className="d-block w-100" alt="..."/>
+                        <img src={evaly2} className="d-block w-100" alt="..."/>
                     </div>
                 </div>
             </div>
@@ -57,7 +60,7 @@ const Slider = () => {
                         </Link>
                     </div>
                     <div className="col-md-5">
-                        <img src="http://zwin.io/react/stoon/assets/img/product-details/big1.png" className="d-block w-100" alt="..."/>
+                        <img src={evaly3} className="d-block w-100" alt="..."/>
                     </div>
                 </div>
             </div>
