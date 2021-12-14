@@ -5,7 +5,7 @@ import { logOutAction } from '../../../redux/action/action';
 
 const Navbar = () => {
     const dispatch = useDispatch();
-    const email = useSelector((state) => state?.auth?.authdetails?.email)
+    const logout = useSelector((state) => state?.auth?.authdetails?.email)
 
     return (
         <div  className="mt-5">
@@ -44,7 +44,7 @@ const Navbar = () => {
                         </li>
 
                         {
-                          email && <>
+                          logout && <>
                           
                           <li className="nav-item">
                             <Link onClick={() => dispatch(logOutAction())} to="/" className="nav-link" >LogOut</Link>
