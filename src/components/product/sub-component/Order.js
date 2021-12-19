@@ -8,24 +8,24 @@ const Order = () => {
     const history = useHistory();
     const singleProductDetail = useSelector((state) => state.auth.cartItem);
     const customerEmail = useSelector((state) => state.auth.authdetails)
-    // console.log(singleProductDetail);
+    //  console.log(customerEmail._id);
 
     const { register, handleSubmit } = useForm();
     const onSubmit = async (data) => {
         const orderData = {
+            userId: customerEmail._id,
             customerEmail: data.CustomerEmail,
             productName: data.ProductName,
             productImage: data.ProductImage,
             price: data.Price,
         }
-        console.log(orderData);
+        console.log(orderData.userId);
         try {
             const res = await axios({
                 method: 'post',
-                url: 'https://quiet-lowlands-25512.herokuapp.com/api/order/addneworder',
+                url: 'http://localhost:5500/api/order/addneworder',
                 data: orderData
             });
-            console.log(data);
             console.log(res);
         }
         catch (err) {

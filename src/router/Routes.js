@@ -15,7 +15,6 @@ import ProductDetail from '../components/product/sub-component/ProductDetail';
 import Order from '../components/product/sub-component/Order';
 import PrivateRoute from '../components/authication/PrivateRoute';
 
-
 const Routes = () => {
     return (
         <Router>
@@ -50,7 +49,7 @@ const Routes = () => {
                     <SignIn />
                 </Route>
 
-
+             
                 <Route exact path="/login">
                     <Login />
                 </Route>
