@@ -4,7 +4,7 @@
   /* The Table Attributes */
   table {
     text-align: center;
-    width: 1000px;
+    width: 87%;
     margin: 20px auto;
     font-family: sans-serif;
     border-bottom: 5px solid #009688;
@@ -31,9 +31,11 @@
   }
   /*Attributes */
   .blue {
+    cursor: pointer;
     background-color: #03a9f4;
   }
   .pink {
     background-color: #e91e63;
+    cursor: pointer;
   }
   

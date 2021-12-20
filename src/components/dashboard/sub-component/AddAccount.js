@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import swal from 'sweetalert';
 
 const AddAccount = () => {
     const { register, handleSubmit } = useForm();
@@ -11,20 +11,7 @@ const AddAccount = () => {
 			email: data.Email,
             role: data.Role,
             password: data.Password
-		
 		}
-
-
-        toast('please wait for lodding...', {
-			position: "center",
-			autoClose: 9000,
-			hideProgressBar: false,
-			closeOnClick: true,
-			pauseOnHover: true,
-			draggable: true,
-			progress: undefined,
-		});
-
         try {
 			const res = await axios({
 			  method: 'post',
@@ -32,19 +19,17 @@ const AddAccount = () => {
 			  data: newAdminData
 			});
 		
-			
+			swal('Admin Added Successfully');
 			console.log(res);
 		}
 		catch (err) {
-            toast("error!");
 			console.log(err);
+            swal("Failed!", "Admin not added!!", "error", { dangerMode: true });
 		  }
-
     }
 
     return (
         <div className="container">
-            	<ToastContainer />
             <form onSubmit={handleSubmit(onSubmit)}>
                 <h2 className="mx-auto">Add New Admin</h2>
                 <div className="row">

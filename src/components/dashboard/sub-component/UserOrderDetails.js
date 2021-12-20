@@ -1,7 +1,7 @@
 import React from 'react';
 
 const UserOrderDetails = ({ data, index }) => {
-    const {createdAt,customerEmail,productImage,productName,price } = data;
+    const {createdAt,customerEmail,productImage,productName,price,status } = data;
     return (
         <>
           <tr>
@@ -10,7 +10,7 @@ const UserOrderDetails = ({ data, index }) => {
               <td>{productImage}</td>
               <td>{productName}</td>
               <td>{price}</td>
-              <td>Pandding</td>
+              <td>{status}</td>
               </tr>  
         </>
     );

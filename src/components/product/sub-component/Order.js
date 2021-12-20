@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import {useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 
@@ -9,17 +9,19 @@ const Order = () => {
     const singleProductDetail = useSelector((state) => state.auth.cartItem);
     const customerEmail = useSelector((state) => state.auth.authdetails)
     //  console.log(customerEmail._id);
-
+    const [status, setStatus] = useState('pending');
     const { register, handleSubmit } = useForm();
     const onSubmit = async (data) => {
+     
         const orderData = {
             userId: customerEmail._id,
             customerEmail: data.CustomerEmail,
             productName: data.ProductName,
             productImage: data.ProductImage,
             price: data.Price,
+            status: status
         }
-        console.log(orderData.userId);
+        console.log(orderData);
         try {
             const res = await axios({
                 method: 'post',

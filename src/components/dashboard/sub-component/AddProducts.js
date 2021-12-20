@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import swal from 'sweetalert';
 const AddProducts = () => {
 
   
@@ -21,12 +22,13 @@ const AddProducts = () => {
 			  url: 'https://quiet-lowlands-25512.herokuapp.com/api/product/addnewproduct',
 			  data: productData
 			});
-		
+            swal('Product added successfully');
 			
 			console.log(res);
 		}
 		catch (err) {
 			console.log(err);
+            swal("Failed!", "Product Not Added !!", "error", { dangerMode: true });
 		  }
 
     }
@@ -76,7 +78,8 @@ const AddProducts = () => {
                     <div className="col-md-6">
                         <div className="form-group">
                             <label for="company"> description</label>
-                            <input {...register("Description")} type="text" className="form-control" placeholder="description" id="company" />
+                            
+                            <textarea {...register("Description")} type="text" className="form-control" placeholder="description" id="company" />
                         </div>
                     </div>
 

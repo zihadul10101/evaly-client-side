@@ -5,7 +5,6 @@ import UserOrderDetails from './UserOrderDetails';
 
 
 const UserOrderList = () => {
-
     const user = useSelector((state) => state?.auth?.authdetails)
     // console.log(user);
     const userId = user._id;
@@ -31,7 +30,6 @@ const UserOrderList = () => {
             <h3 className="mx-auto">My Order List </h3>
             <table>
                 <thead>
-
                     <tr>
                         <th>Order Date</th>
                         <th>Email</th>
@@ -42,17 +40,14 @@ const UserOrderList = () => {
                     </tr>
                 </thead>
                 <tbody>
+                    {
+                        userOrder?.map((p, i) => (
+                            <UserOrderDetails key={p._id} index={i} data={p} />
+                        ))
+                    }
 
-                {
-                                        userOrder?.map((p, i) => (
-                                            <UserOrderDetails key={p._id} index={i} data={p}/>
-                                        ))
-                                    }
-                     
-                      </tbody>
-
+                </tbody>
             </table>
-
         </div>
     );
 };
