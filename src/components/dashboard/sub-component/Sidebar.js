@@ -33,11 +33,11 @@ const Sidebar = () => {
            </>
          }
           <li>
-            <Link to="/dashboard/customerprofile">Customer Profile</Link>
+            <Link to="/dashboard/customerprofile">My Profile</Link>
           </li>
 
           <li>
-            <Link to="/dashboard/orderlist">Order List</Link>
+            <Link to="/dashboard/orderlist">My Order List</Link>
           </li>
 
         </ul>

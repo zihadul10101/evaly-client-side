@@ -20,7 +20,7 @@ const ViewOrders = () => {
 
     const getAllOrders = async () => {
         try {
-            const res = await axios.get('http://localhost:5500/api/order/orderAll');
+            const res = await axios.get('https://quiet-lowlands-25512.herokuapp.com/api/order/orderAll');
             setAllOrders(res.data)
 
         } catch (error) {
@@ -35,8 +35,10 @@ const ViewOrders = () => {
         try {
             const res = await axios.delete(`http://localhost:5500/api/order/${_id}`);
             if (res) {
-                // console.log('data deleted successfully');
-                swal('data deleted successfully');
+                swal({
+                    title: "deleted successfully!",
+                    icon: "success",
+                  });
                 setSuccess(true);
             }
         } catch (err) {

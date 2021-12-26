@@ -7,7 +7,9 @@ const UserOrderDetails = ({ data, index }) => {
           <tr>
               <td> {new Date(createdAt).toDateString()}</td>
               <td>{customerEmail}</td>
-              <td>{productImage}</td>
+              <td>
+                  <img src={productImage} style={{ 'height':'20%', 'width':'20%'}} />
+              </td>
               <td>{productName}</td>
               <td>{price}</td>
               <td>{status}</td>

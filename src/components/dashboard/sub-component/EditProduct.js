@@ -21,22 +21,26 @@ const customStyles = {
 const EditProduct = ({ modalIsOpen, closeModal, product }) => {
     const [image, setImage] = useState([])
     const { _id, title,  description, price } = product;
-    console.log(product._id);
+    // console.log(_id);
 
     const { register, handleSubmit } = useForm();
     const onSubmit = async data => {
         const productUpdateData = {
+            productId: product._id,
             title: data.title,
             photo: data.photo,
             description: data.description,
             price: data.price,
         };
+       
         try {
             const res = await axios({
                 method: 'put',
-                url: `http://localhost:5500/api/product/updated/${_id}`,
+                url: `https://quiet-lowlands-25512.herokuapp.com/api/product/updated/${_id}`,
                 data: productUpdateData
+             
             });
+           
             console.log('server side response', res)
             swal("Successfully updated", "Your Prodct has been successfully updated!", "success");
 
@@ -72,14 +76,15 @@ const EditProduct = ({ modalIsOpen, closeModal, product }) => {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
+             
                 <form className='modal-form' onSubmit={handleSubmit(onSubmit)}>
-                    <input  className="image-input" type='file' onChange={handleImageUpload} />
+                    <input  className="image-input" type='file'  placeholder="Photo" {...register("photo")} onChange={handleImageUpload} />
                     <br />
-                    <input type='text' defaultValue={title} placeholder="News Title" {...register("title")} />
+                    <input type='text' defaultValue={title} placeholder="Title" {...register("title")} />
                     <br />
-                    <input type='text' defaultValue={price} placeholder="Author Name" {...register("price")} />
+                    <input type='text' defaultValue={price} placeholder="Price" {...register("price")} />
                     <br />
-                    <textarea type='text' defaultValue={description} placeholder="News Description" {...register("description")} />
+                    <textarea type='text' defaultValue={description} placeholder=" Description" {...register("description")} />
 
                     <br />
                     <input className='custom-btn' type="submit" />

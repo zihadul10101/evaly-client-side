@@ -19,9 +19,7 @@ const customStyles = {
 
 
 const EditStatus = ({ modalIsOpen, closeModal, order }) => {
-
     const { status, _id } = order;
-    // console.log(order._id);
     const { register, handleSubmit } = useForm();
     const onSubmit = async data => {
         const orderUpdateStatus = {
@@ -30,16 +28,14 @@ const EditStatus = ({ modalIsOpen, closeModal, order }) => {
         try {
             const res = await axios({
                 method: 'put',
-                url: `http://localhost:5500/api/order/updated/${_id}`,
+                url: `https://quiet-lowlands-25512.herokuapp.com/api/order/updated/${_id}`,
                 data: orderUpdateStatus
             });
-            console.log('server side response', res)
-            swal("Successfully updated", "Your News has been successfully updated!", "success");
+            swal("Successfully updated", "Your Products been successfully updated!", "success");
 
         }
         catch (err) {
-            swal("Failed!", "You can update only your added News!", "error", { dangerMode: true });
-            console.log(err);
+            swal("Failed!", "error", { dangerMode: true });
         }
     };
 
@@ -52,7 +48,6 @@ const EditStatus = ({ modalIsOpen, closeModal, order }) => {
                 contentLabel="Example Modal"
             >
                 <form className='modal-form' onSubmit={handleSubmit(onSubmit)}>
-
                     <select class="form-select" defaultValue={status} {...register("status")} required aria-label="Default select example">
                         <option selected>Open this select status</option>
                         <option value="1">Pending</option>

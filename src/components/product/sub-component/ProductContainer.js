@@ -15,7 +15,7 @@ const ProductContainer = () => {
         try {
             const res = await axios.get('https://quiet-lowlands-25512.herokuapp.com/api/product/productAll');
 
-            setProduct(res.data)
+            setProduct(res?.data)
 
         } catch (error) {
             console.error(error);
@@ -35,15 +35,15 @@ const ProductContainer = () => {
                         product.map(pd => (
                             <div className="col" style={{ height: '33%', width: '33%' }}>
                                 <div className="">
-                                    <img src={pd.photo} style={{ height: '50%', width: '100%' }} className="card-img-top " alt="..." />
+                                    <img src={pd?.photo} style={{ height: '50%', width: '100%' }} className="card-img-top " alt="..." />
                                     <div className="card-body">
-                                        <h5 className="card-title">{pd.title}</h5>
-                                        <h5 className="card-title">{pd.price}</h5>
-                                        <p className="card-text">{pd.description}</p>
+                                        <h5 className="card-title">{pd?.title}</h5>
+                                        <h5 className="card-title">{pd?.price}</h5>
+                                        <p className="card-text">{pd?.description}</p>
                                     </div>
                                     <div className="card-footer panda-card-footer">
 
-                                        <button onClick={() => singleCart(pd._id)} className="btn btn-warning">
+                                        <button onClick={() => singleCart(pd?._id)} className="btn btn-warning">
                                             Buy Now
                                         </button>
 

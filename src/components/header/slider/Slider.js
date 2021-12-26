@@ -22,7 +22,7 @@ const Slider = () => {
                         Faxon Canvas Low-Top Sneaker Inspired Slim Ankle Leg Jean
                         </p>
                         <h3>$1200</h3>
-                        <Link to="/login">
+                        <Link to="/product">
                         <button className="btn btn-warning">Buy Now</button>
                         </Link>
                     </div>
@@ -38,7 +38,7 @@ const Slider = () => {
                         <p> This is the best Faxon Canvas Low-Top Sneake 
                         </p>
                         <h3> $420</h3>
-                        <Link to="/login">
+                        <Link to="/product">
 
                         <button className="btn btn-warning">Buy Now</button>
                         </Link>
@@ -55,7 +55,7 @@ const Slider = () => {
                         <p>This is the best x-box in the world for people who just want to waste time in front of
                             fake sports.</p>
                         <h3>$600</h3>
-                        <Link to="/login">
+                        <Link to="/product">
                         <button className="btn btn-warning">Buy Now</button>
                         </Link>
                     </div>

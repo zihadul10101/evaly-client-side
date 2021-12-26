@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+import swal from 'sweetalert';
 
 const Order = () => {
     const history = useHistory();
@@ -25,7 +26,7 @@ const Order = () => {
         try {
             const res = await axios({
                 method: 'post',
-                url: 'http://localhost:5500/api/order/addneworder',
+                url: 'https://quiet-lowlands-25512.herokuapp.com/api/order/addneworder',
                 data: orderData
             });
             console.log(res);
@@ -33,7 +34,10 @@ const Order = () => {
         catch (err) {
             console.log(err);
         }
-
+        swal({
+            title: "Order successfully!",
+            icon: "success",
+          });
         history.replace('/dashboard')
 
     }

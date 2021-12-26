@@ -18,9 +18,11 @@ const AddAccount = () => {
 			  url: 'https://quiet-lowlands-25512.herokuapp.com/api/auth/register',
 			  data: newAdminData
 			});
+            swal({
+                title: "New Admin Added Successfully!",
+                icon: "success",
+              });
 		
-			swal('Admin Added Successfully');
-			console.log(res);
 		}
 		catch (err) {
 			console.log(err);
