@@ -14,6 +14,7 @@ import Home from '../pages/Home';
 import ProductDetail from '../components/product/sub-component/ProductDetail';
 import Order from '../components/product/sub-component/Order';
 import PrivateRoute from '../components/authication/PrivateRoute';
+import ImageUpload from '../components/authication/ImageUpload';
 
 const Routes = () => {
     return (
@@ -27,6 +28,10 @@ const Routes = () => {
 
                 <Route exact path="/home">
                     <Home />
+                </Route>
+
+                <Route exact path="/imageUpload">
+                    <ImageUpload />
                 </Route>
 
                 <Route exact path="/product">
